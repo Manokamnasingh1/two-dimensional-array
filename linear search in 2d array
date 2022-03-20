@@ -1,0 +1,30 @@
+package com.ms;
+
+import java.util.Scanner;
+
+public class Array {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int rows = Sc.nextInt();
+        int cols = Sc.nextInt();
+        int[][] numbers = new int[rows][cols];
+
+        //input
+        //rows
+        for (int i = 0; i < rows; i++) {
+            //column
+            for (int j = 0; j < cols; j++) {
+                numbers[i][j] = Sc.nextInt();
+            }
+
+        }
+        int x = Sc.nextInt();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (numbers[i][j] == x) {
+                    System.out.println("x is fount at(" + i + "," + j + ")");
+                }
+            }
+        }
+    }
+}
