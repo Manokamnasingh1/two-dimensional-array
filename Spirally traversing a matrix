@@ -1,0 +1,54 @@
+import  java.io.*;
+import java.util.*;
+
+public class Array {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("size of array");
+        int n = Sc.nextInt();
+        int m = Sc.nextInt();
+        int[][] a = new int[n][m];
+
+
+        System.out.println("enter  element of  matrix");
+        for (int i = 0; i < a.length; i++) {
+            //column
+            for (int j = 0; j < a[0].length; j++) {
+                a[i][j] = Sc.nextInt();
+            }
+        }
+
+        int minr = 0;
+        int minc = 0;
+        int maxr = a.length - 1;
+        int maxc = a[0].length - 1;
+        int tn = n*m;
+        int cnt = 0;
+        while (cnt<tn) {
+            //leftwall
+            for (int i = minr,j=minc; i<=maxr && cnt < tn; i++){
+                System.out.println(a[i][j]);
+            }
+            minc++;
+            //bottom wall
+            for (int i = maxr, j = minc; j <= maxc && cnt < tn;j++){
+                System.out.println(a[i][j]);
+                cnt++;
+            }
+            maxr--;
+            //right wall
+            for (int i = maxr, j = maxc; i >= minr && cnt < tn; i--){
+                System.out.println(a[i][j]);
+                cnt++;
+            }
+            maxc--;
+            //topwall
+            for (int i = minr, j = maxc; j >= minc && cnt < tn ;j--){
+                System.out.println(a[i][j]);
+                cnt++;
+            }
+            minr++;
+
+        }
+    }
+}
