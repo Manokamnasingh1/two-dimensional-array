@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Twodarray {
+    public static void main(String[] args) {
+        int sum=0;
+        System.out.println("enter size of an arry");
+        Scanner Sc = new Scanner(System.in);
+        int rows = Sc.nextInt();
+        int cols = Sc.nextInt();
+        int[][] numbers = new int[rows][cols];
+
+        //input
+        //rows
+        System.out.println("enter element of array");
+        for (int i = 0; i < rows; i++) {
+            //column
+            for (int j = 0; j < cols; j++) {
+                numbers[i][j] = Sc.nextInt();
+            }
+
+        }
+        //output
+        System.out.println("2d array is:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(numbers[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++) {
+                if(i==j){
+                    sum = sum + numbers[i][j];
+
+                }
+            }
+        }
+        System.out.println("sum is: =" +sum);
+    }
+}
